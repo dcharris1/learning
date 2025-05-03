@@ -21,6 +21,4 @@ if st.button("Generate Password"):
     random.shuffle(password_list)
     password = "".join(password_list)
     st.success(f"Your password is: `{password}`")
-├── requirements.txt
-streamlit
-└── README.md                # (Optional) Description of your project
+
