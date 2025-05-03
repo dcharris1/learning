@@ -1,6 +1,29 @@
 password-generator-streamlit/
 │
-├── streamlit_app.py         # Your main app script
+├── streamlit_app.py
+import streamlit as st
+import random
+
+st.title("🔐 PyPassword Generator")
+
+letters = list('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')
+numbers = list('0123456789')
+symbols = list('!#$%&()*+')
+
+# UI inputs
+nr_letters = st.number_input("How many letters?", min_value=0, step=1)
+nr_symbols = st.number_input("How many symbols?", min_value=0, step=1)
+nr_numbers = st.number_input("How many numbers?", min_value=0, step=1)
+
+if st.button("Generate Password"):
+    password_list = (
+        [random.choice(letters) for _ in range(nr_letters)] +
+        [random.choice(symbols) for _ in range(nr_symbols)] +
+        [random.choice(numbers) for _ in range(nr_numbers)]
+    )
+    random.shuffle(password_list)
+    password = "".join(password_list)
+    st.success(f"Your password is: `{password}`")
 ├── requirements.txt
 streamlit
 └── README.md                # (Optional) Description of your project
