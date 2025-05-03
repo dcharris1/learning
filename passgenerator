@@ -1,0 +1,5 @@
+password-generator-streamlit/
+│
+├── streamlit_app.py         # Your main app script
+├── requirements.txt         # List of required packages
+└── README.md                # (Optional) Description of your project
