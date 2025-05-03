@@ -1,4 +1,5 @@
-password-generator-streamlit/streamlit_app.py
+password-generator-streamlit/
+    streamlit_app.py
 import streamlit as st
 import random
 
